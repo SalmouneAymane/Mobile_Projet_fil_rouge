@@ -1,27 +1,19 @@
-Act as an expert full-stack web developer. I am building the admin panel for an e-learning platform using native PHP, MySQL (PDO), and Tailwind CSS.
+# Project prompt
 
-We will build the CRUD interface for the courses entity in two strict phases.
+Recreate the existing e-learning application as an admin-only management interface for courses and school subjects.
 
-Constraints:
+## Requirements
 
-Do NOT generate any login, authentication, or public-facing main pages.
-Focus strictly on the admin course management system.
-Use PDO with prepared statements to protect against SQL injection.
-Database Context:
-The system consists of 4 main tables: teachers, school_subjects, courses, and reviews. Focus primarily on the first 3.
-The courses table must relate to teachers and school_subjects via foreign keys, and must include a status column (enum: 'draft', 'published').
-
---- PHASE 1: DATABASE SCHEMA PROPOSAL (DO THIS FIRST) ---
-
-Generate the proposed schema.sql code for teachers, school_subjects, and courses. Include reasonable field names, data types, indexes, and foreign key constraints.
-Provide a brief explanation of the schema structure and relationships.
-CRITICAL INSTRUCTION FOR PHASE 1: Stop immediately after outputting the SQL schema. Do NOT write any PHP files, Tailwind CSS code, or backend logic yet. Ask me to validate or request changes to the schema first.
-
---- PHASE 2: APPLICATION CODE (AWAIT MY APPROVAL) ---
-Only after I approve or modify the schema in my next response, you will proceed to generate:
-
-db.php: PDO connection setup using standard credentials.
-index.php: Admin dashboard table displaying ALL courses (draft & published), joining teacher and subject names, with "Edit", "Delete", and "Add Course" triggers.
-create.php: UI form with pre-populated dynamic dropdowns for teachers and subjects.
-edit.php: UI form pre-filled with the selected course data.
-delete.php: Safe deletion handler with redirection to index.php.
+- Implement create, list, update, and delete operations for courses and school subjects.
+- Use a JSON file as the persistent database. Do not use MySQL or another database engine.
+- Structure the project with separate `backend` and `frontend` directories.
+- Build the frontend as a single-page application that calls the backend with `fetch`.
+- Use native PHP and object-oriented programming in the backend.
+- Separate PHP models, repositories/data access, services/business rules, and API request handling into distinct classes/files.
+- Use Tailwind CSS utility classes for the interface; do not add a custom/native CSS stylesheet.
+- Keep teacher management out of scope. Store the teacher name as part of each course.
+- A course has a title, URL slug, description, teacher name, school subject, and `draft` or `published` status.
+- Prevent deleting a school subject that is assigned to a course.
+- Validate incoming API data, return meaningful JSON errors/status codes, and protect JSON file reads and writes with file locks.
+- Do not add authentication or public-facing course pages.
+- Include setup and API instructions in `README.md`.

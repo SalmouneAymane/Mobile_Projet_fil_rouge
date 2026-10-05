@@ -1,0 +1,8 @@
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^backend(?:/|$) - [F,L]
+    RewriteRule ^api(?:/|$) index.php [QSA,L]
+    RewriteRule ^$ index.php [L]
+</IfModule>
