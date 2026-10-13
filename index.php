@@ -9,6 +9,22 @@ if ($requestPath === '/api' || str_starts_with($requestPath, '/api/')) {
     exit;
 }
 
+if (in_array($requestPath, ['/presentation', '/presentation/', '/presentation/index.html'], true)) {
+    readfile(__DIR__ . '/presentation/index.html');
+    exit;
+}
+
+$presentationFile = realpath(__DIR__ . $requestPath);
+$presentationRoot = realpath(__DIR__ . '/presentation');
+if (
+    str_starts_with($requestPath, '/presentation/')
+    && $presentationFile !== false
+    && $presentationRoot !== false
+    && str_starts_with($presentationFile, $presentationRoot . DIRECTORY_SEPARATOR)
+) {
+    return false;
+}
+
 if (str_starts_with($requestPath, '/backend/')) {
     http_response_code(404);
     exit('Not found.');

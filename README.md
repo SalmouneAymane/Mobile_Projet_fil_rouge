@@ -13,6 +13,8 @@ php -S 127.0.0.1:8000 index.php
 Then open <http://127.0.0.1:8000>. PHP 8.1 or newer is required. The web server must be allowed to write to `backend/storage/database.json`.
 Tailwind CSS is loaded from its CDN, so the browser needs network access to render the utility-class styling.
 
+The classroom presentation is available at <http://127.0.0.1:8000/presentation>. Use the arrow keys, space bar, or on-screen controls to navigate slides; press `F` for fullscreen and `Esc` to close the slide overview.
+
 For Apache, enable `mod_rewrite` and allow `.htaccess` overrides. The included rules route `/api/...` to the PHP router and deny direct web access to backend files.
 
 ## Data and API

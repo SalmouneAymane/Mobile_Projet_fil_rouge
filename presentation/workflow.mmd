@@ -1,0 +1,25 @@
+flowchart TB
+    subgraph functional["Branche fonctionnelle"]
+        direction LR
+        needs_functional["Capture des besoins<br/>fonctionnels"] --> analysis["Analyse"]
+    end
+
+    subgraph technical["Branche technique"]
+        direction LR
+        needs_technical["Capture des besoins<br/>techniques"] --> generic_design["Conception<br/>générique"]
+        generic_design --> prototype["Prototype"]
+    end
+
+    analysis --> preliminary["Conception préliminaire"]
+    generic_design --> preliminary
+    preliminary --> detailed["Conception détaillée"]
+    detailed --> coding["Codage et tests"]
+    coding --> acceptance["Recette"]
+
+    classDef input fill:#a7f3d0,stroke:#a7f3d0,color:#064e3b,font-weight:bold
+    classDef design fill:#fbcfe8,stroke:#fbcfe8,color:#831843,font-weight:bold
+    classDef output fill:#ffffff,stroke:#ffffff,color:#102b80,font-weight:bold
+
+    class needs_functional,needs_technical,analysis,generic_design input
+    class preliminary,detailed,coding,acceptance design
+    class prototype output
