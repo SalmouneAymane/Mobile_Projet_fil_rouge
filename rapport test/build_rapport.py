@@ -29,7 +29,6 @@ STRUCTURE = [
     {"title": "Remerciements", "level": 2},
     {"title": "Introduction", "level": 2},
     {"title": "Contexte du projet", "level": 2},
-    {"title": "Objectif de formation (Solicode)", "level": 2},
     {"title": "Cahier des charges", "level": 2},
     {"title": "Méthodologie de travail", "level": 2},
     {"title": "Méthodologie Scrum", "level": 3},

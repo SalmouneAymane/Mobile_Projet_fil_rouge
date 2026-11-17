@@ -10,7 +10,6 @@ title: Rapport
 - [Remerciements](#remerciements)
 - [Introduction](#introduction)
 - [Contexte du projet](#contexte-du-projet)
-- [Objectif de formation (Solicode)](#objectif-de-formation-solicode)
 - [Cahier des charges](#cahier-des-charges)
 - [Méthodologie de travail](#méthodologie-de-travail)
   - [Méthodologie Scrum](#méthodologie-scrum)
@@ -40,9 +39,6 @@ title: Rapport
 
 
 ## Contexte du projet
-
-
-## Objectif de formation (Solicode)
 
 
 ## Cahier des charges
