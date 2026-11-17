@@ -24,6 +24,29 @@ style: |
     font-size: 1.25em;
     line-height: 1.65;
   }
+  section.title-slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+    padding: 32px 48px 40px;
+  }
+  section.title-slide .brand-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 28px;
+    width: 100%;
+    margin: 8px 0 18px;
+  }
+  section.title-slide .brand-row img {
+    max-height: 88px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 3px 8px rgba(36, 59, 107, 0.12));
+  }
   section.image-only {
     display: flex;
     flex-direction: column;
@@ -39,7 +62,17 @@ style: |
   }
 ---
 
-# Rapport de projet
+<!-- _class: title-slide -->
+
+# Rapport de projet e-learning platforme
+
+<div class="brand-row">
+  <img src="ofppt.png" alt="Logo OFPPT" />
+  <img src="solicode.png" alt="Logo SOLICODE" />
+</div>
+
+Aymane salmoune  
+encadrant : Fouad ESSARAJ
 
 ---
 
