@@ -60,6 +60,14 @@ style: |
     max-height: 78%;
     object-fit: contain;
   }
+  section.diagram-slide img {
+    display: block;
+    max-width: 90%;
+    max-height: 440px;
+    width: auto;
+    margin: 0 auto;
+    object-fit: contain;
+  }
 ---
 
 <!-- _class: title-slide -->
@@ -72,7 +80,7 @@ style: |
 </div>
 
 Aymane salmoune  
-encadrant : Fouad ESSARAJ
+Encadrant : ES-Sarraj Fouad
 
 ---
 
@@ -88,13 +96,12 @@ encadrant : Fouad ESSARAJ
 
 ---
 
-## Objectif de formation (Solicode)
+## <!-- _class: image-only -->
+
+## Méthode de travail
 
 ---
 
-## Cahier des charges
-
----
 <!-- _class: image-only -->
 
 ## Scrum
@@ -109,6 +116,7 @@ encadrant : Fouad ESSARAJ
 ![Processus 2TUP](../rapport/2TUP/images.jpg)
 
 ---
+
 <!-- _class: image-only -->
 
 ## Design Thinking
@@ -137,7 +145,11 @@ encadrant : Fouad ESSARAJ
 
 ---
 
+<!-- _class: diagram-slide -->
+
 ## Diagramme de cas d'utilisation
+
+![Diagramme de cas d'utilisation](diagramme-cas-utilisation.png)
 
 ---
 
@@ -154,60 +166,28 @@ encadrant : Fouad ESSARAJ
 
 ## Architecture
 
-**Présentation** → **Logique métier** → **Accès aux données**
-
-Navigateur · HTML / JavaScript
-
-↓ API HTTP / JSON
-
-PHP · Services · DAO
-
-↓
-
-Fichier JSON
+![diagram architecture](image.png)
 
 ---
 
-## Prototype musical
-
-- Genres · Artistes · Morceaux
-- Création · Consultation · Modification · Suppression
-- Statut · Brouillon ou publié
-- Couvertures · Fichiers audio
-
----
-
-## Relations des données
-
-- **Artiste** → plusieurs morceaux
-- **Genre** → plusieurs morceaux
-- **Morceau** → un artiste + un genre
-
----
-
-## Structure technique
-
-- **Frontend** · HTML · CSS / Tailwind · JavaScript
-- **Backend** · PHP · Contrôleurs · Services · DAO
-- **API** · REST
-- **Données** · MySQL / MariaDB · prototype JSON
-
----
-
-## Diagramme de classes
-
----
 
 ## Maquettes
 
 ---
 
-## Interfaces
+<!-- _class: diagram-slide -->
+
+## Diagramme de classes
+
+![Diagramme de classes](diagramme-classes.png)
+
+---
+
+
+
+## Realisation
 
 ---
 
 ## Conclusion
 
-- Prototype CRUD fonctionnel
-- Base pour une plateforme musicale évolutive
-- Extensions possibles · authentification · upload audio · gestion complète
