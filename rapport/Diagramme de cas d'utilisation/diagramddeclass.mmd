@@ -1,54 +1,20 @@
-flowchart LR
-    %% Acteurs représentés avec des pictogrammes compatibles
-    Admin["👤<br/><b>Administrateur</b>"]
-    Tutor["👨‍🏫<br/><b>Tuteur</b>"]
+usecase-beta
+direction TB
 
-    %% Système
-    subgraph System ["Plateforme E-Learning"]
-        direction TB
+actor Administrateur
 
-        %% Gestion des Matières
-        subgraph Subjects ["Gestion des Matières (School Subjects)"]
-            UC_Sub_Manage(["Gérer les matières<br/>(Ajouter, Modifier, Supprimer)"])
-            UC_Sub_List(["Consulter la liste des matières"])
-        end
+Administrateur --> "ajouter une matière"
+Administrateur --> "modifier une matière"
+Administrateur --> "supprimer une matière"
+Administrateur --> "consulter la liste des matières"
 
-        %% Gestion des Tuteurs
-        subgraph Tutors ["Gestion des Tuteurs (Tutors)"]
-            UC_Tut_Manage(["Gérer les tuteurs<br/>(Ajouter, Modifier, Supprimer)"])
-            UC_Tut_List(["Consulter la liste des tuteurs"])
-        end
+Administrateur --> "ajouter un tuteur"
+Administrateur --> "modifier un tuteur"
+Administrateur --> "supprimer un tuteur"
+Administrateur --> "consulter la liste des tuteurs"
 
-        %% Gestion des Cours
-        subgraph Courses ["Gestion des Cours (Courses)"]
-            UC_Crs_List(["Consulter le catalogue des cours"])
-            UC_Crs_Create(["Créer un nouveau cours"])
-            UC_Crs_Edit(["Modifier un cours existant"])
-            UC_Crs_Status(["Changer le statut<br/>(Brouillon / Publié)"])
-            UC_Crs_Delete(["Supprimer un cours"])
-
-            UC_Assign_Sub(["Associer une matière"])
-            UC_Assign_Tut(["Assigner un tuteur"])
-        end
-    end
-
-    %% Connexions Administrateur
-    Admin --- UC_Sub_Manage
-    Admin --- UC_Sub_List
-    Admin --- UC_Tut_Manage
-    Admin --- UC_Tut_List
-    Admin --- UC_Crs_Create
-    Admin --- UC_Crs_Edit
-    Admin --- UC_Crs_Status
-    Admin --- UC_Crs_Delete
-    Admin --- UC_Crs_List
-
-    %% Connexions Tuteur
-    Tutor --- UC_Crs_List
-    Tutor --- UC_Crs_Create
-    Tutor --- UC_Crs_Edit
-    Tutor --- UC_Crs_Status
-
-    %% Relations d'inclusion (include)
-    UC_Crs_Create -.->|«include»| UC_Assign_Sub
-    UC_Crs_Create -.->|«include»| UC_Assign_Tut
+Administrateur --> "consulter le catalogue des cours"
+Administrateur --> "créer un cours et l'associer à une matière et un tuteur"
+Administrateur --> "modifier un cours existant"
+Administrateur --> "changer le statut d'un cours (brouillon / publié)"
+Administrateur --> "supprimer un cours"

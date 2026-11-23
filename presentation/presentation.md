@@ -125,10 +125,6 @@ Encadrant : ES-Sarraj Fouad
 
 ---
 
-## Planification
-
----
-
 ## Branche fonctionnelle
 
 ---
